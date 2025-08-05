@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  tg-jav-bot:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: tg-jav-bot
+    env_file:
+      - .env
+    volumes:
+      - ./data:/root/.tg_jav_bot
+    depends_on:
+      - redis
+    restart: unless-stopped
+    networks:
+      - bot-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: tg-jav-bot-redis
+    ports:
+      - "127.0.0.1:6379:6379" # 仅限本机访问
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    networks:
+      - bot-network
+
+  crawler-service:
+    build:
+      context: ./crawler_service
+      dockerfile: Dockerfile
+    container_name: tg-jav-bot-crawler
+    ports:
+      - "8000:8000"
+    networks:
+      - bot-network
+    restart: unless-stopped
+
+volumes:
+  redis-data:
+
+networks:
+  bot-network:
+    driver: bridge
