@@ -80,10 +80,10 @@ Edit `.env` with your configuration:
 
 ```env
 # Telegram Bot Configuration
-TG_BOT_TOKEN=your_bot_token_here
-TG_CHAT_ID=your_chat_id_here
-TG_API_ID=your_api_id_here
-TG_API_HASH=your_api_hash_here
+TG_BOT_TOKEN=your_bot_token_here      # Your bot token, get it from @BotFather
+TG_CHAT_ID=your_chat_id_here          # Your personal chat id or admin group id, get it from @userinfobot
+TG_API_ID=your_api_id_here            # Telegram API ID, get it from https://my.telegram.org
+TG_API_HASH=your_api_hash_here        # Telegram API Hash, get it from https://my.telegram.org
 
 # Proxy Configuration (Optional)
 USE_PROXY=0

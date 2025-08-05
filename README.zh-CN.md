@@ -78,10 +78,10 @@ touch .env
 
 ```env
 # Telegram 机器人配置
-TG_BOT_TOKEN=your_bot_token_here
-TG_CHAT_ID=your_chat_id_here
-TG_API_ID=your_api_id_here
-TG_API_HASH=your_api_hash_here
+TG_BOT_TOKEN=your_bot_token_here      # 你的机器人Token，向 @BotFather 申请获得
+TG_CHAT_ID=your_chat_id_here          # 你的个人chat id或管理员群组id，可用 @userinfobot 获取
+TG_API_ID=your_api_id_here            # Telegram API ID，需在 https://my.telegram.org 申请
+TG_API_HASH=your_api_hash_here        # Telegram API Hash，需在 https://my.telegram.org 申请
 
 # 代理配置 (可选)
 USE_PROXY=0
